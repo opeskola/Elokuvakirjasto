@@ -1,26 +1,39 @@
-describe('Movie list', function(){
+describe('MovieListController', function(){
 	var controller, scope;
 
 	var FirebaseServiceMock;
 
   	beforeEach(function(){
-  		// Lisää moduulisi nimi tähän
-    	module('MyAwesomeModule');
+            // Lisää moduulisi nimi tähän
+            module('MyApp');
 
     	FirebaseServiceMock = (function(){
+            
+            var movies = [
+                {
+                    title: 'Titanic'
+                },
+                {
+                    title: 'Jurassic Park'
+                }
+            ];
 			return {
 				// Toteuta FirebaseServicen mockatut metodit tähän
+                                getMovies: function(){
+                                    return movies;
+                                }
 			}
 		})();
 
 		// Lisää vakoilijat
 	    // spyOn(FirebaseServiceMock, 'jokuFunktio').and.callThrough();
+            spyOn(FirebaseServiceMock, 'getMovies').and.callThrough();
 
     	// Injektoi toteuttamasi kontrolleri tähän
 	    inject(function($controller, $rootScope) {
 	      scope = $rootScope.$new();
 	      // Muista vaihtaa oikea kontrollerin nimi!
-	      controller = $controller('MyAwesomeController', {
+	      controller = $controller('MovieListController', {
 	        $scope: scope,
 	        FirebaseService: FirebaseServiceMock
 	      });
@@ -37,7 +50,9 @@ describe('Movie list', function(){
   	* käyttämällä toBeCalled-oletusta.
   	*/ 
 	it('should list all movies from the Firebase', function(){
-		expect(true).toBe(false);
+            expect(FirebaseServiceMock.getMovies).toHaveBeenCalled();
+            expect(scope.movies.length).toBe(2);
+            expect(scope.movies[0].title).toBe('Titanic');
 	});
 
 	/* 
