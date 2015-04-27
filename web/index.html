@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
   <head>
+    <title>Elokuvakirjasto</title>  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Elokuvakirjasto</title>
   </head>
-  <body>
-    <h1>Uusi otsikko on tässä!</h1>
-
+  <body ng-app="MyApp">
+    <h1>Elokuvakirjasto, osa 1</h1>
+    
+        <a href="#/">Etusivu</a> | <a href="#/movies">Elokuvat</a> | <a href="#/movies/new">Lisää elokuva</a>
+        <div ng-view=""></div>
+    
     <!-- Hyödyllisiä kirjastoja -->
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
@@ -16,6 +24,14 @@
     <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
 
     <!-- Linkitä omat tiedostosi tähän (huomaa, että polun juuri on web-kansio!) -->
-    <script src="app/app.js"></script>    
+    <script src="app/app.js"></script>
+    <script src="app/controllers/movie_add_controller.js"></script>
+    <script src="app/controllers/movie_list_controller.js"></script>
+    <script src="app/services/service.js"></script>
+    
   </body>
 </html>
+
+
+
+
