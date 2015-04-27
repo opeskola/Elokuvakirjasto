@@ -17,12 +17,12 @@ MyApp.controller('MovieAddController', function($scope, FirebaseService, $locati
                 
             });
             
-            
-            
             $scope.newTitle = '';
             $scope.newDirector = '';
             $scope.newPublicationYear = '';
-            $scope.newDescription = '';     
+            $scope.newDescription = '';   
+            
+            $location.path("/movies");
         }        
     }
 });

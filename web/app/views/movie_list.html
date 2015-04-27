@@ -1,7 +1,12 @@
 <h2>Elokuvat</h2> 
 
-<ul ng-repeat="movie in movies">
-    <li>{{movie.title}}</li>
+<ul> 
+    <li ng-repeat="movie in movies">
+        <a ng-href="#/movies/{{movie.$id}}">{{movie.title}}</a>
+        <button ng-click="removeMovie(movie)">Poista</button>
+        <a ng-href="#/movies/{{movie.$id}}/edit">Muokkaa</a>
+                
+    </li>
 </ul>
 
 
