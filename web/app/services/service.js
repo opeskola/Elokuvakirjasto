@@ -20,9 +20,9 @@ MyApp.service('FirebaseService', function($firebase){
         movies.$remove(movie);
     }
     
-    this.getMovie = function(key, done){
+    this.getMovie = function(id, done){
         movies.$loaded(function(){
-            done(movies.$getRecord(key));
+            done(movies.$getRecord(id));
         });
     }
 });

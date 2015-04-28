@@ -1,4 +1,5 @@
-MyApp.controller('MovieEditController', function($scope, FirebaseService, $location){
+MyApp.controller('MovieEditController', function($scope, FirebaseService, $routeParams, $location){
+
 
     $scope.movies = FirebaseService.getMovies();
     $scope.editTitle = '';
@@ -26,4 +27,5 @@ MyApp.controller('MovieEditController', function($scope, FirebaseService, $locat
             
         }
     }
+
 });

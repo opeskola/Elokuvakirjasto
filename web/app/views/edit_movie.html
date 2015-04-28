@@ -1,9 +1,11 @@
 <h2>Muokkaa elokuvan tietoja</h2>
-     
-<form name="form">
-    <input type="text" placeholder="movie" name="movie_edit" required ng-model="editTitle">
-    <input type="text" placeholder="director" name="director_edit" required ng-model="editDirector">
-    <input type="text" placeholder="publication year" name="year_edit" required ng-model="editPublicationYear">
-    <input type="text" placeholder="description" name="description_edit" required ng-model="editDescription">
-    <button ng-click="editMovie(movie)">Lähetä</button>
+
+<form name="editForm">
+        <input type="text" placeholder="movie" name="movie_edit" required ng-model="editTitle">
+        <input type="text" placeholder="director" name="director_edit" required ng-model="editDirector">
+        <input type="text" placeholder="publication year" name="year_edit" required ng-model="editPublicationYear">
+        <input type="text" placeholder="description" name="description_edit" required ng-model="editDescription">
+        <button ng-click="editMovie(movie)">Lähetä</button>
 </form>
+
+

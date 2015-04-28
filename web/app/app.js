@@ -15,12 +15,12 @@ MyApp.config(function($routeProvider){
       controller: 'MovieAddController',
       templateUrl: 'app/views/add_movie.html'  
     })
-    .when('/movies/:key', {
-        controller: 'MovieShowController',
+    .when('/movies/:id', {
+        controller: 'MovieListController',
         templateUrl: 'app/views/show_movie.html'
      })
     .when('/movies/:id/edit', {
-        controller: 'MovieEditController',
+        controller: 'MovieAddController',
         templateUrl: 'app/views/edit_movie.html'
      })     
      
