@@ -22,7 +22,9 @@ MyApp.config(function($routeProvider){
     .when('/movies/:id/edit', {
         controller: 'MovieAddController',
         templateUrl: 'app/views/edit_movie.html'
-     })     
-     
-
-});
+     })
+ });
+ 
+ MyApp.config(['$httpProvider', function($httpProvider) {
+  delete $httpProvider.defaults.headers.common["X-Requested-With"]
+}]);
