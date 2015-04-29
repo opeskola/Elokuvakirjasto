@@ -1,11 +1,17 @@
 <h2>Lisää elokuva</h2>
      
 <form name="form">
+    <h4>Nimi</h4>
     <input type="text" placeholder="movie" name="movie" required ng-model="newTitle">
+    <h4>Ohjaaja</h4>
     <input type="text" placeholder="director" name="director" required ng-model="newDirector">
+    <h4>Julkaisuvuosi</h4>
     <input type="text" placeholder="publication year" name="year" required ng-model="newPublicationYear">
+    <h4>Kuvaus</h4>
     <input type="text" placeholder="description" name="description" required ng-model="newDescription">
-    <button ng-click="addMovie()">Lisää elokuva</button>
+    <br>
+    <br>
+    <button class="btn btn-primary" ng-click="addMovie()">Lisää</button>
 </form>
 
 

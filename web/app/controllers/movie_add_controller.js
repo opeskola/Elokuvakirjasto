@@ -1,4 +1,8 @@
 MyApp.controller('MovieAddController', function($scope, FirebaseService, $routeParams, $location){
+
+//    if(!currentAuth){
+//        $location.path('/login');
+//    }     
     
     FirebaseService.getMovie($routeParams.id, function(movie){
         $scope.movie = movie;

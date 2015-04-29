@@ -1,14 +1,21 @@
 <h2>Elokuvat</h2> 
 
-<ul> 
-    <li ng-repeat="movie in movies">
-        <a ng-href="#/movies/{{movie.$id}}">{{movie.title}}</a>
-        <button ng-click="removeMovie(movie)">Poista</button>
-        <a ng-href="#/movies/{{movie.$id}}/edit">Muokkaa</a>
-                
-    </li>
-</ul>
-
+<table class="table">
+    <tr>
+        <td><strong>Nimi</strong></td>
+        <td><strong>Ohjaaja</strong></td>
+        <td><strong>Julkaisuvuosi</strong></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="movie in movies">
+        <td><a ng-href="#/movies/{{movie.$id}}">{{movie.title}}</a></td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.year}}</td>
+        <td><button class="btn btn-danger" ng-click="removeMovie(movie)">Poista</button></td>
+        <td><a ng-href="#/movies/{{movie.$id}}/edit">Muokkaa</a></td>
+    </tr>         
+</table>
 
 
 
