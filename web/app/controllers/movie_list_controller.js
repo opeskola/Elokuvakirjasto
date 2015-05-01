@@ -18,8 +18,9 @@ MyApp.controller('MovieListController', function($scope, FirebaseService, $route
 //        $scope.movies = movies;
 //    });
     
-    $scope.removeMovie = function(movie){
+    $scope.removeMovie = function(index, movie){
         FirebaseService.removeMovie(movie);
+        $scope.movies.splice(index, 1);	
     }
     
     

@@ -12,11 +12,12 @@
         <td><a ng-href="#/movies/{{movie.$id}}">{{movie.title}}</a></td>
         <td>{{movie.director}}</td>
         <td>{{movie.year}}</td>
-        <td><button class="btn btn-danger" ng-click="removeMovie(movie)">Poista</button></td>
+        <td><button class="btn btn-danger" ng-click="removeMovie($index, movie)">Poista</button></td>
         <td><a ng-href="#/movies/{{movie.$id}}/edit">Muokkaa</a></td>
+<!--        <button class="btn btn-danger" ng-click="removeMovie(movie)">Poista</button>
+        <a ng-href="#/movies/{{movie.$id}}/edit">Muokkaa</a>-->
     </tr>         
 </table>
-
 
 
 
